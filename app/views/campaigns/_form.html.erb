@@ -1,0 +1,61 @@
+<%= form_for(@campaign) do |f| %>
+  <% if @campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+      <ul>
+      <% @campaign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+<h2>Email</h2>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :from %><br />
+    <%= f.text_field :from %>
+  </div>
+  <div class="field">
+    <%= f.label :reply %><br />
+    <%= f.text_field :reply %>
+  </div>
+  <div class="field">
+    <%= f.label :cc %><br />
+    <%= f.text_field :cc %>
+  </div>
+  <div class="field">
+    <%= f.label :bcc %><br />
+    <%= f.text_field :bcc %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.file_field :data %>
+  </div>
+  <div class="field">
+    <%= f.label :template_html %><br />
+    <%= f.file_field :template_html %>
+  </div>
+  <div class="field">
+    <%= f.label :template_text %><br />
+    <%= f.file_field :template_text %>
+  </div>
+  
+  
+    
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
